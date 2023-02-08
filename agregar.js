@@ -1,14 +1,13 @@
 const renderizarFormulario = document.getElementById("agregarProducto");
-//const divBtnFormulario = document.getElementById("div-btn-formulario");
-//const inputCodigo = document.getElementById("input-codigo");
-//const inputTipo = document.getElementById("input-tipo");
-//const inputColor = document.getElementById("input-color");
-//const inputTalle = document.getElementById("input-talle");
-//const inputStock = document.getElementById("input-stock");
-//const inputPrecio = document.getElementById("input-precio");
-//const inputFoto = document.getElementById("input-foto");
+const divBtnFormulario = document.getElementById("div-btn-formulario");
+const inputCodigo = document.getElementById("input-codigo");
+const inputTipo = document.getElementById("input-tipo");
+const inputColor = document.getElementById("input-color");
+const inputTalle = document.getElementById("input-talle");
+const inputStock = document.getElementById("input-stock");
+const inputPrecio = document.getElementById("input-precio");
+const inputFoto = document.getElementById("input-foto");
 const formIngresar = document.getElementById("form-ingresar");
-
 
 function verFormulario() {
 
@@ -49,29 +48,3 @@ function verFormulario() {
         const botonFormulario = document.getElementById("botonForm")
         botonFormulario.addEventListener("click", () => productos.push(new Producto(inputCodigo.value, inputTipo.value, inputColor.value, inputTalle.value, inputStock.value, inputPrecio.value, inputFoto.value)));
 }
-
-
-
-////CICLO - CONDICIONAL
-
-//let nuevoProducto = 0
-//
-//while (nuevoProducto < 3){
-//
-//    let ingreso = new Producto
-//        ((prompt("Ingrese el código del producto")),
-//        (prompt("Ingrese el tipo de producto (pantalon, remera, medias, etc)")),
-//        (prompt("Ingrese el color")), 
-//        (prompt("Ingrese el talle (S, M, L)")), 
-//        (prompt("Ingrese el stock")), 
-//        (prompt("Ingrese el precio de venta"))
-//        (prompt("Ingrese la url de la imagen del producto")));
-//        
-//        productos.push(ingreso)
-//
-//        alert("Ha ingresado correctamente un nuevo producto");
-//        
-//        nuevoProducto++
-//}
-//
-//console.log(productos)

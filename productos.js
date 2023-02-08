@@ -129,8 +129,6 @@ class Producto{
         this.stock = parseInt(stock);
         this.precio = parseFloat(precio);
         this.foto = foto;
-
-        console.log(`Ha ingresado correctamente el producto ${this.tipo} ${this.color}`);
     }
 }
 
@@ -147,20 +145,16 @@ productos.push(new Producto("21", "boxer", "negro", "l", 8, 2000, "https://d22fx
 productos.push(new Producto("22", "medias", "naranja", "s", 6, 1500, "https://i.pinimg.com/564x/55/95/f2/5595f2ef007cff343ee0aad2acbd2ead.jpg")); 
 productos.push(new Producto("23", "pullover", "rosa", "s", 3, 5000, "https://i.pinimg.com/564x/83/c9/8e/83c98eeaab7ad1648a9c4ad9f07bd724.jpg")); 
 
-console.log(productos)
-
-
 //CARRITO
 let carrito = []
 
+//ALMACENAR EN LS
 const mandarAlLocalStorage = (clave, valor) => {localStorage.setItem(clave,valor)};
 
 const carritoEnLocalStorage = JSON.parse(localStorage.getItem("carritoLs"));
-
 
 if (carritoEnLocalStorage) {
     carrito = carritoEnLocalStorage
 } else {
     carrito = []
 }
-

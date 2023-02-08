@@ -51,7 +51,6 @@ mostrarNavbar.innerHTML = `
 `
 navbar.append(mostrarNavbar)
 
-
 const irInicio = document.getElementById("irInicio");
 irInicio.addEventListener("click", () => {
   limpiarInner()
@@ -63,8 +62,6 @@ agregarItems.addEventListener("click", () => {
   limpiarInner()
   verFormulario();
 })
-
-
 
 const navbarImagen = document.getElementById('navbar-imagen');
 navbarImagen.addEventListener('click', () => navbarImagen.classList.add('animate__hinge'));

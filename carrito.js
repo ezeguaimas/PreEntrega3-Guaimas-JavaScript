@@ -5,7 +5,6 @@ const comprar = document.getElementById("comprar")
 
 const meterAlCarrito = (producto) => {
     let productoEnCarrito = carrito.find(item => item.codigo === producto.codigo)
-    console.log(productoEnCarrito);
     if (productoEnCarrito !== undefined) {
         //productoEnCarrito.precio = productoEnCarrito.precio + producto.precio
         productoEnCarrito.cantidad = productoEnCarrito.cantidad + 1
@@ -20,14 +19,11 @@ const meterAlCarrito = (producto) => {
             cantidad: 1,
         })
     }
-    console.log(carrito)
-    console.log("EL CARRITO CONTIENE " + carrito);
 }
 
 function elementosEnCarrito() {
     
     const totalCarrito = carrito.reduce((acumulador, producto) => acumulador + (producto.precio * producto.cantidad), 0)
-    console.log(totalCarrito)
 
     document.getElementById("titulo-carrito").innerHTML = `<h2>CARRITO DE COMPRAS</h2>`;
     document.getElementById("comprar").innerHTML = `
@@ -57,23 +53,16 @@ function elementosEnCarrito() {
                 <hr>
                 <hr>
             `
-        renderizarCarrito.append(mostrarCarrito);
-        
-        const btnComprar = document.getElementById("btn-comprar")
-        btnComprar.addEventListener("click", () => {
-        
-        mandarAlLocalStorage("carritoLs",JSON.stringify(carrito))
-        
-        console.log("CARRITO EN LS"+carritoEnLocalStorage)
-        console.log("CARRITO EN LS PARSEADO"+carritoEnLocalStorage)
-});
-
-
+            renderizarCarrito.append(mostrarCarrito);
+            
+            const btnComprar = document.getElementById("btn-comprar")
+            btnComprar.addEventListener("click", () => {
+                mandarAlLocalStorage("carritoLs",JSON.stringify(carrito))
+            });
         })
     }
 }
 btnVerCarro.addEventListener("click", () => {
     limpiarInner()
     elementosEnCarrito(carrito)
-    console.log(carrito)
 });
