@@ -1,13 +1,4 @@
 const renderizarFormulario = document.getElementById("agregarProducto");
-const divBtnFormulario = document.getElementById("div-btn-formulario");
-const inputCodigo = document.getElementById("input-codigo");
-const inputTipo = document.getElementById("input-tipo");
-const inputColor = document.getElementById("input-color");
-const inputTalle = document.getElementById("input-talle");
-const inputStock = document.getElementById("input-stock");
-const inputPrecio = document.getElementById("input-precio");
-const inputFoto = document.getElementById("input-foto");
-const formIngresar = document.getElementById("form-ingresar");
 
 function verFormulario() {
 
@@ -40,11 +31,23 @@ function verFormulario() {
                     <br>
                 </div>
                 <hr>
-                <input id="botonForm" class="btn btn-primary" type="button" value="Ingresar Producto">
+                <button id="botonForm" class="btn btn-success btn-lg" type="submit">Ingresar Producto</button>
+                <button id="botonForm" class="btn btn-danger" type="reset">Reset</button>
             </form>
         `
         renderizarFormulario.append(mostrarFormulario);
 
-        const botonFormulario = document.getElementById("botonForm")
-        botonFormulario.addEventListener("click", () => productos.push(new Producto(inputCodigo.value, inputTipo.value, inputColor.value, inputTalle.value, inputStock.value, inputPrecio.value, inputFoto.value)));
+        const formIngresar = document.getElementById("form-ingresar");
+        formIngresar.addEventListener("submit", () => {
+            const inputCodigo = document.getElementById("input-codigo");
+            const inputTipo = document.getElementById("input-tipo");
+            const inputColor = document.getElementById("input-color");
+            const inputTalle = document.getElementById("input-talle");
+            const inputStock = document.getElementById("input-stock");
+            const inputPrecio = document.getElementById("input-precio");
+            const inputFoto = document.getElementById("input-foto");
+            
+            productos.push(new Producto(inputCodigo.value, inputTipo.value, inputColor.value, inputTalle.value, inputStock.value, inputPrecio.value, inputFoto.value))
+            document.getElementById('form-ingresar').reset();
+        })
 }

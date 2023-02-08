@@ -6,7 +6,6 @@ const comprar = document.getElementById("comprar")
 const meterAlCarrito = (producto) => {
     let productoEnCarrito = carrito.find(item => item.codigo === producto.codigo)
     if (productoEnCarrito !== undefined) {
-        //productoEnCarrito.precio = productoEnCarrito.precio + producto.precio
         productoEnCarrito.cantidad = productoEnCarrito.cantidad + 1
     } else {
         carrito.push({
